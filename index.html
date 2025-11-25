@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Site</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- En-tête -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">MonSite</div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Accueil</a></li>
+                <li><a href="solutions.html" class="nav-link">Solutions</a></li>
+                <li><a href="#apropos" class="nav-link">À propos</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Section Héro -->
+    <section id="accueil" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Bienvenue sur mon site</h1>
+            <p class="hero-subtitle">Créez quelque chose d'incroyable</p>
+            <button class="btn btn-primary" id="cta-button">Commencer</button>
+        </div>
+    </section>
+
+    <!-- Section Services -->
+    <section id="services" class="services">
+        <h2>Nos Services</h2>
+        <div class="services-grid">
+            <div class="card">
+                <div class="card-icon">📱</div>
+                <h3>Responsive</h3>
+                <p>Votre site s'adapte à tous les appareils</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">⚡</div>
+                <h3>Rapide</h3>
+                <p>Performances optimales et temps de chargement minimal</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🔒</div>
+                <h3>Sécurisé</h3>
+                <p>Les meilleures pratiques de sécurité appliquées</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section À propos -->
+    <section id="apropos" class="about">
+        <div class="about-content">
+            <h2>À propos</h2>
+            <p>Bienvenue ! Je suis passionné par la création de sites web modernes et performants. 
+            Avec des compétences en HTML, CSS et JavaScript, je crée des expériences utilisateur exceptionnelles.</p>
+            <p>Mon approche combine design attrayant et fonctionnalité robuste pour garantir votre succès.</p>
+        </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section id="contact" class="contact">
+        <h2>Nous Contacter</h2>
+        <form class="contact-form" id="contact-form">
+            <div class="form-group">
+                <input type="text" id="name" name="name" placeholder="Votre nom" required>
+            </div>
+            <div class="form-group">
+                <input type="email" id="email" name="email" placeholder="Votre email" required>
+            </div>
+            <div class="form-group">
+                <textarea id="message" name="message" placeholder="Votre message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Envoyer</button>
+        </form>
+        <div id="form-status"></div>
+    </section>
+
+    <!-- Pied de page -->
+    <footer class="footer">
+        <p>&copy; 2025 MonSite. Tous droits réservés.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
