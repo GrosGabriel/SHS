@@ -46,6 +46,7 @@ body {
     padding: 1rem 2rem;
     max-width: 1200px;
     margin: 0 auto;
+    transition: padding 0.25s ease;
 }
 
 .logo-container {
@@ -57,6 +58,7 @@ body {
 .logo-img {
     height: 50px;
     width: auto;
+    transition: height 0.25s ease, transform 0.25s ease;
 }
 
 .logo {
@@ -64,6 +66,7 @@ body {
     font-weight: bold;
     color: var(--primary-color);
     text-decoration: none;
+    transition: font-size 0.25s ease, transform 0.25s ease;
 }
 
 .nav-menu {
@@ -80,6 +83,12 @@ body {
 }
 
 .nav-link:hover {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+}
+
+/* Active nav link indicates current page */
+.nav-link.active {
     color: var(--primary-color);
     border-bottom: 2px solid var(--primary-color);
 }
@@ -304,6 +313,13 @@ body {
     border-top: 2px solid var(--primary-color);
 }
 
+/* Logo + banner adaptive size at top */
+.logo-container { align-items: center; }
+.logo-img, .logo { transform-origin: left center; }
+body.at-top .navbar { padding: 2rem 2rem; }
+body.at-top .navbar .logo-img { height: 90px; transform: none; }
+body.at-top .navbar .logo { font-size: 2rem; transform: none; }
+
 
 /* Scam Modal */
 .scam-modal {
@@ -367,6 +383,39 @@ body {
 .close-scam:hover {
     background: rgba(255, 255, 255, 0.5);
     transform: scale(1.1);
+}
+
+/* Ensure embedded video fits the modal nicely */
+.scam-content video {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Two-column layout for scam modal */
+.scam-body {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+}
+
+.scam-text {
+    flex: 1 1 auto;
+    text-align: left;
+}
+
+.scam-media {
+    flex: 0 0 auto;
+}
+
+@media (max-width: 768px) {
+    .scam-body {
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+    }
+    .scam-text {
+        text-align: center;
+    }
 }
 
 @keyframes scamPulse {

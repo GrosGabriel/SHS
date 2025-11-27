@@ -100,7 +100,7 @@ const ctaButton = document.getElementById('cta-button');
 if (ctaButton) {
     ctaButton.addEventListener('click', (e) => {
         e.preventDefault();
-        showScamModal();
+        window.location.href = 'solutions.html#plans';
     });
 }
 
@@ -109,18 +109,42 @@ const trustUsButton = document.getElementById('cta-button-2');
 if (trustUsButton) {
     trustUsButton.addEventListener('click', (e) => {
         e.preventDefault();
-        showScamModal();
+        window.location.href = 'solutions.html#plans';
     });
 }
 
+// Show scam modal and play video
 function showScamModal() {
     const modal = document.getElementById('scam-modal');
+    if (!modal) return;
     modal.style.display = 'flex';
+
+    const video = document.getElementById('scam-video');
+    if (video) {
+        // Ensure audio is on by default
+        video.muted = false;
+        video.volume = 1.0;
+        video.currentTime = 0;
+        const playPromise = video.play();
+        if (playPromise && typeof playPromise.then === 'function') {
+            playPromise.catch(() => {
+                // Autoplay may be blocked; user can press play via controls
+            });
+        }
+    }
 }
 
+// Close scam modal and stop video
 function closeScamModal() {
     const modal = document.getElementById('scam-modal');
+    if (!modal) return;
     modal.style.display = 'none';
+
+    const video = document.getElementById('scam-video');
+    if (video) {
+        video.pause();
+        video.currentTime = 0;
+    }
 }
 
 // Fermer le modal en cliquant en dehors
@@ -214,3 +238,43 @@ function createMobileMenu() {
 
 // Initialiser le menu mobile au chargement de la page
 document.addEventListener('DOMContentLoaded', createMobileMenu);
+
+// Logo bigger at top, normal on scroll with hysteresis to avoid flicker
+let isAtTop = null;
+let tickingAtTop = false;
+const ENTER_TOP_Y = 10;   // become 'at-top' when <= this
+const EXIT_TOP_Y  = 80;   // leave 'at-top' when > this
+
+function computeAtTopState(y) {
+    if (isAtTop === null) {
+        return y <= ENTER_TOP_Y;
+    }
+    if (isAtTop) {
+        return y <= EXIT_TOP_Y; // stay at-top until we pass EXIT_TOP_Y
+    }
+    return y <= ENTER_TOP_Y; // only re-enter when we cross back under ENTER_TOP_Y
+}
+
+function updateAtTop() {
+    const y = window.scrollY || document.documentElement.scrollTop || 0;
+    const nextState = computeAtTopState(y);
+    if (nextState !== isAtTop) {
+        isAtTop = nextState;
+        document.body.classList.toggle('at-top', isAtTop);
+    }
+}
+
+function onScrollAtTop() {
+    if (tickingAtTop) return;
+    tickingAtTop = true;
+    requestAnimationFrame(() => {
+        updateAtTop();
+        tickingAtTop = false;
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    updateAtTop();
+});
+window.addEventListener('scroll', onScrollAtTop, { passive: true });
+window.addEventListener('resize', onScrollAtTop);
