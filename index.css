@@ -1,0 +1,710 @@
+/* Variables */
+:root {
+    --primary-color: #8b5cf6;
+    --secondary-color: #ffffff;
+    --accent-color: #7c3aed;
+    --text-color: #2c3e50;
+    --light-bg: #f8f9fa;
+    --white: #ffffff;
+    --dark-bg: #1a1a1a;
+    --shadow: 0 2px 20px rgba(139, 92, 246, 0.15);
+    --transition: all 0.3s ease;
+}
+
+/* Réinitialisation */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: var(--white);
+}
+
+/* En-tête */
+.header {
+    background-color: var(--white);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow);
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.logo-img {
+    height: 50px;
+    width: auto;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: var(--transition);
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+}
+
+/* Section Héro */
+.hero {
+    background: linear-gradient(135deg, #8b5cf6, #a78bfa);
+    color: var(--white);
+    padding: 100px 2rem;
+    text-align: center;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-dark {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.4) 0%, rgba(167, 139, 250, 0.4) 100%),
+                url('img/fond_sourire.jpg') center top/cover;
+    position: relative;
+}
+
+.hero-about {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.4) 0%, rgba(167, 139, 250, 0.4) 100%),
+                url('img/who_we_are.jpg') center top/cover !important;
+    position: relative;
+}
+
+.hero-content {
+    max-width: 1000px;
+}
+
+.hero-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    animation: fadeInDown 0.8s ease;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    opacity: 0.95;
+    animation: fadeInUp 0.8s ease;
+    color: var(--white);
+}
+
+.hero-description {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    opacity: 0.8;
+    animation: fadeInUp 1s ease;
+}
+
+/* Boutons */
+.btn {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 600;
+}
+
+.btn-primary {
+    background-color: var(--white);
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-color);
+    
+    box-shadow: 0 4px 20px rgba(124, 58, 237, 0.4);
+    color: var(--white);
+}
+
+.btn .arrow {
+    display: inline-block;
+    margin-left: 0;
+    opacity: 0;
+    width: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    padding-right: 30px;
+}
+
+.btn:hover .arrow {
+    opacity: 1;
+    width: auto;
+    margin-left: 0.5rem;
+}
+
+.btn-secondary {
+    background-color: var(--accent-color);
+    color: var(--white);
+    font-weight: 700;
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    
+    box-shadow: 0 4px 20px rgba(139, 92, 246, 0.4);
+    color: var(--white);
+}
+
+/* Section IA */
+.ia-section {
+    padding: 80px 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.ia-section h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    text-shadow: 0 0 20px rgba(139, 92, 246, 0.2);
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--text-color);
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+    font-style: italic;
+}
+
+.ia-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(380px, 1fr));
+    gap: 2rem;
+}
+.card {
+    background-color: rgba(139, 92, 246, 0.08);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.1);
+    transition: var(--transition);
+    cursor: pointer;
+    border: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 30px rgba(139, 92, 246, 0.3);
+    background-color: rgba(139, 92, 246, 0.15);
+    border-color: var(--primary-color);
+}
+
+.card-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.card p {
+    color: var(--text-color);
+}
+
+/* Section Statistiques */
+.stats-section {
+    padding: 80px 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    background: linear-gradient(180deg, rgba(139, 92, 246, 0.08) 0%, transparent 100%);
+}
+
+.stats-section h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 3rem;
+    text-shadow: 0 0 20px rgba(139, 92, 246, 0.2);
+}
+
+.stats-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 1rem;
+}
+
+.stat-number {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 15px rgba(139, 92, 246, 0.4);
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    color: var(--text-color);
+    line-height: 1.4;
+    max-width: 120px;
+}
+
+.ia-card {
+    background-color: rgba(139, 92, 246, 0.05);
+    border: 1px solid var(--primary-color);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.1);
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.ia-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 30px rgba(139, 92, 246, 0.3);
+    background-color: rgba(139, 92, 246, 0.12);
+    border-color: var(--accent-color);
+}
+
+.ia-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.ia-card p {
+    color: var(--text-color);
+}
+
+/* Section À propos */
+.about {
+    background-color: var(--light-bg);
+    padding: 80px 2rem;
+    border-top: 2px solid var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    text-shadow: 0 0 20px rgba(139, 92, 246, 0.2);
+}
+
+.about p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+}
+
+/* Section Témoignages */
+.testimonies-section {
+    padding: 80px 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: linear-gradient(180deg, rgba(139, 92, 246, 0.06) 0%, transparent 100%);
+}
+
+.testimonies-section h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 3rem;
+    text-shadow: 0 0 20px rgba(139, 92, 246, 0.2);
+}
+
+.testimonies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.testimony-card {
+    background-color: rgba(139, 92, 246, 0.08);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.1);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    transition: var(--transition);
+    text-align: center;
+}
+
+.testimony-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 30px rgba(139, 92, 246, 0.3);
+    background-color: rgba(139, 92, 246, 0.15);
+    border-color: var(--accent-color);
+}
+
+.testimony-profile {
+    margin-bottom: 1.5rem;
+}
+
+.profile-pic {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    border: 3px solid var(--primary-color);
+    object-fit: cover;
+}
+
+.testimony-card h3 {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.profile-role {
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+.testimony-text {
+    color: var(--text-color);
+    line-height: 1.6;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+/* Section Contact */
+.contact {
+    padding: 80px 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+.contact-form {
+    background-color: rgba(139, 92, 246, 0.08);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.1);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: var(--transition);
+    background-color: rgba(255, 255, 255, 0.9);
+    color: var(--text-color);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 10px rgba(139, 92, 246, 0.4);
+}
+
+#form-status {
+    margin-top: 1rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+#form-status.success {
+    color: #27ae60;
+}
+
+#form-status.error {
+    color: var(--accent-color);
+}
+
+/* Section Convinced Yet */
+.convinced-section {
+    padding: 80px 2rem;
+    text-align: center;
+    background: linear-gradient(180deg, rgba(139, 92, 246, 0.25) 0%, rgba(124, 58, 237, 0.15) 50%, transparent 100%);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.convinced-section h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    text-shadow: 0 0 20px rgba(139, 92, 246, 0.2);
+}
+
+.convinced-section .section-subtitle {
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+}
+
+.convinced-section .btn-container {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Pied de page */
+.footer {
+    background-color: var(--white);
+    color: var(--text-color);
+    text-align: center;
+    padding: 2rem;
+    border-top: 2px solid var(--primary-color);
+}
+
+/* Scam Modal */
+.scam-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 10000;
+    justify-content: center;
+    align-items: center;
+}
+
+.scam-content {
+    background: linear-gradient(135deg, #ff4444 0%, #cc0000 100%);
+    padding: 60px 80px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(255, 68, 68, 0.5), inset 0 0 50px rgba(0, 0, 0, 0.3);
+    animation: scamPulse 0.5s ease-out;
+    position: relative;
+}
+
+.scam-content h1 {
+    font-size: 4rem;
+    color: white;
+    margin: 0;
+    font-weight: 900;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 255, 0, 0.3);
+    letter-spacing: 3px;
+}
+
+.scam-content p {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.95);
+    margin: 1.5rem 0;
+    line-height: 1.6;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.close-scam {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    background: rgba(255, 255, 255, 0.3);
+    border: none;
+    color: white;
+    font-size: 2.5rem;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.close-scam:hover {
+    background: rgba(255, 255, 255, 0.5);
+    transform: scale(1.1);
+}
+
+@keyframes scamPulse {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Animations */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-menu {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .ia-section h2,
+    .about h2,
+    .contact h2 {
+        font-size: 1.8rem;
+    }
+
+    .ia-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .bytebrush-container {
+        grid-template-columns: 1fr;
+    }
+
+    .brush-icon {
+        font-size: 100px;
+    }
+
+    .stats-container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .stat-number {
+        font-size: 2.5rem;
+    }
+
+    .stat-label {
+        font-size: 0.8rem;
+    }
+}
+
+/* Adapt IA grid for medium screens so text can wrap on smaller viewports */
+@media (max-width: 1100px) {
+    .ia-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+    .card p {
+        white-space: normal;
+    }
+}
+
+/* Button hover expansion */
+.btn {
+    padding: 12px 20px;
+}
+
+.btn .arrow {
+    display: inline-block;
+    margin-left: 0;
+    opacity: 0;
+    width: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    padding-right: 30px;
+}
+
+.btn:hover .arrow {
+    opacity: 1;
+    width: auto;
+    margin-left: 0.5rem;
+}
+

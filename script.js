@@ -1,78 +1,144 @@
-// Scroll smooth pour les liens de navigation
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
+// Animation des chiffres au scroll - compteur
+function initCounterAnimation() {
+    const statNumbers = document.querySelectorAll('.stat-number');
+    const monitoringNumber = document.querySelector('.monitor-counter');
+    const allCounters = Array.from(statNumbers);
+    if (monitoringNumber) {
+        allCounters.push(monitoringNumber);
+    }
+
+    let currentAnimation = null;
+
+    function animateCounter(element) {
+        // Arrêter l'animation précédente si elle existe
+        if (currentAnimation && currentAnimation.element === element) {
+            clearInterval(currentAnimation.interval);
         }
+
+        const text = element.dataset.value || element.textContent.trim();
+        // Sauvegarder la valeur originale si ce n'est pas déjà fait
+        if (!element.dataset.value) {
+            element.dataset.value = text;
+        }
+        
+        let finalValue = text;
+        let numericValue = 0;
+        let suffix = '';
+        
+        // Extraire le nombre et le suffixe (M, B, %, /7, ms)
+        const match = text.match(/^([\d.]+)([A-Za-z%\/]*)$/);
+        if (match) {
+            numericValue = parseFloat(match[1]);
+            suffix = match[2];
+        }
+        
+        // Durée de l'animation en ms
+        const duration = 1500;
+        const steps = 60;
+        const stepDuration = duration / steps;
+        let currentStep = 0;
+        
+        const interval = setInterval(() => {
+            currentStep++;
+            const progress = currentStep / steps;
+            
+            // Easing function pour un démarrage rapide puis ralentissement
+            const easeOutQuad = 1 - (1 - progress) * (1 - progress);
+            
+            let displayValue;
+            if (suffix === '/7') {
+                // Pour 24/7, afficher juste le nombre qui augmente jusqu'à 24
+                displayValue = Math.round(24 * easeOutQuad);
+                element.textContent = displayValue + suffix;
+            } else if (suffix === 'M' || suffix === 'B') {
+                displayValue = (numericValue * easeOutQuad).toFixed(1);
+                element.textContent = displayValue + suffix;
+            } else if (suffix === '%') {
+                displayValue = (numericValue * easeOutQuad).toFixed(1);
+                element.textContent = displayValue + suffix;
+            } else if (suffix === 'ms') {
+                displayValue = Math.round(numericValue * easeOutQuad);
+                element.textContent = displayValue + suffix;
+            } else {
+                displayValue = Math.round(numericValue * easeOutQuad);
+                element.textContent = displayValue + suffix;
+            }
+            
+            if (currentStep >= steps) {
+                clearInterval(interval);
+                element.textContent = finalValue;
+                currentAnimation = null;
+            }
+        }, stepDuration);
+
+        currentAnimation = { element, interval };
+    }
+
+    const statsObserverOptions = {
+        threshold: 0.3,
+        rootMargin: '0px'
+    };
+
+    const statsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounter(entry.target);
+            }
+        });
+    }, statsObserverOptions);
+
+    allCounters.forEach(number => {
+        statsObserver.observe(number);
     });
-});
+}
+
+// Initialiser quand le DOM est prêt
+document.addEventListener('DOMContentLoaded', initCounterAnimation);
 
 // Bouton CTA (Call To Action)
 const ctaButton = document.getElementById('cta-button');
 if (ctaButton) {
-    ctaButton.addEventListener('click', () => {
-        const contactSection = document.getElementById('contact');
-        contactSection.scrollIntoView({ behavior: 'smooth' });
-    });
-}
-
-// Gestion du formulaire de contact
-const contactForm = document.getElementById('contact-form');
-const formStatus = document.getElementById('form-status');
-
-if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+    ctaButton.addEventListener('click', (e) => {
         e.preventDefault();
-
-        // Récupération des données du formulaire
-        const name = document.getElementById('name').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const message = document.getElementById('message').value.trim();
-
-        // Validation basique
-        if (!name || !email || !message) {
-            displayMessage('Veuillez remplir tous les champs', 'error');
-            return;
-        }
-
-        if (!isValidEmail(email)) {
-            displayMessage('Veuillez entrer une adresse email valide', 'error');
-            return;
-        }
-
-        // Simulation d'envoi (dans une vraie application, vous enverriez les données à un serveur)
-        console.log('Données du formulaire:', { name, email, message });
-        
-        // Afficher le message de succès
-        displayMessage('✓ Merci ! Votre message a été envoyé avec succès.', 'success');
-
-        // Réinitialiser le formulaire
-        contactForm.reset();
-
-        // Effacer le message après 5 secondes
-        setTimeout(() => {
-            formStatus.textContent = '';
-            formStatus.classList.remove('success', 'error');
-        }, 5000);
+        showScamModal();
     });
 }
 
-// Fonction pour afficher les messages de statut
-function displayMessage(message, type) {
-    formStatus.textContent = message;
-    formStatus.classList.add(type);
+// Trust Us Button - Scam Modal
+const trustUsButton = document.getElementById('cta-button-2');
+if (trustUsButton) {
+    trustUsButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        showScamModal();
+    });
 }
 
-// Fonction de validation email
-function isValidEmail(email) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
+function showScamModal() {
+    const modal = document.getElementById('scam-modal');
+    modal.style.display = 'flex';
 }
+
+function closeScamModal() {
+    const modal = document.getElementById('scam-modal');
+    modal.style.display = 'none';
+}
+
+// Fermer le modal en cliquant en dehors
+window.addEventListener('click', (event) => {
+    const modal = document.getElementById('scam-modal');
+    if (event.target === modal) {
+        closeScamModal();
+    }
+});
+
+// Subscribe buttons - Scam Modal
+const subscribeButtons = document.querySelectorAll('.pricing-card .btn.btn-primary');
+subscribeButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+        e.preventDefault();
+        showScamModal();
+    });
+});
 
 // Animation au scroll pour les cartes
 const observerOptions = {

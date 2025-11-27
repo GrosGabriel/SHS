@@ -1,88 +1,170 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Site</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Oralytics</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <!-- En-tête -->
+    <!-- En-tête -->    
     <header class="header">
         <nav class="navbar">
-            <div class="logo">MonSite</div>
+            <div class="logo-container">
+                <img src="img/logo.png" alt="Oralytics" class="logo-img">
+                <div class="logo">Oralytics</div>
+            </div>
             <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link">Accueil</a></li>
+                <li><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="solutions.html" class="nav-link">Solutions</a></li>
-                <li><a href="#apropos" class="nav-link">À propos</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
             </ul>
         </nav>
     </header>
 
     <!-- Section Héro -->
-    <section id="accueil" class="hero">
+    <section id="accueil" class="hero hero-dark">
         <div class="hero-content">
-            <h1 class="hero-title">Bienvenue sur mon site</h1>
-            <p class="hero-subtitle">Créez quelque chose d'incroyable</p>
-            <button class="btn btn-primary" id="cta-button">Commencer</button>
+             <p class="hero-subtitle">The predictive dental revolution.</p>
+            <h1 class="hero-title">Smarter than your dentist wants it to be.</h1>
+            <p class="hero-description">We turn invisible data into decisive insights.</p>
+            <button class="btn btn-primary" id="cta-button">Trust us <span class="arrow">→</span></button>
+        </div>
+        <div class="hero-grid"></div>
+    </section>
+
+    <!-- Section Statistiques Oralytics -->
+    <section id="stats" class="stats-section">
+        <h2>A solution that can change your future.</h2>
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number">12.4M</div>
+                <div class="stat-label">Data analyzed daily</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">47</div>
+                <div class="stat-label">Countries covered</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">98.7%</div>
+                <div class="stat-label">AI accuracy rate</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">3.2B</div>
+                <div class="stat-label">Events detected per month</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">15.8M</div>
+                <div class="stat-label">Emails sent daily</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">2ms</div>
+                <div class="stat-label">Average latency</div>
+            </div>
         </div>
     </section>
 
-    <!-- Section Services -->
-    <section id="services" class="services">
-        <h2>Nos Services</h2>
-        <div class="services-grid">
-            <div class="card">
-                <div class="card-icon">📱</div>
-                <h3>Responsive</h3>
-                <p>Votre site s'adapte à tous les appareils</p>
+    <!-- AI Technology Section -->
+    <section id="ia" class="ia-section">
+        <h2>Our AI Technology</h2>
+        <p class="section-subtitle">Cognitive synergies, neuromorphic optimization and predictive disruption. Because AI means business.</p>
+        <div class="ia-grid">
+            <div class="card ia-card">
+                <div class="card-icon">🧠</div>
+                <h3>Advanced Machine Learning</h3>
+                <p>Our algorithms learn from every interaction. The more you brush, the better we understand you.</p>
             </div>
-            <div class="card">
-                <div class="card-icon">⚡</div>
-                <h3>Rapide</h3>
-                <p>Performances optimales et temps de chargement minimal</p>
+            <div class="card ia-card">
+                <div class="card-icon">📊</div>
+                <h3>Predictive Analytics</h3>
+                <p>Predict your brushing patterns, reveal hidden trends, and get a personalized weekly brushing schedule.</p>
             </div>
-            <div class="card">
-                <div class="card-icon">🔒</div>
-                <h3>Sécurisé</h3>
-                <p>Les meilleures pratiques de sécurité appliquées</p>
+            <div class="card ia-card">
+                <div class="card-icon">🔐</div>
+                <h3>Quantum-grade Security</h3>
+                <p>Your data is never fully shared. Just enough to understand, not enough to expose.</p>
             </div>
         </div>
     </section>
 
-    <!-- Section À propos -->
-    <section id="apropos" class="about">
-        <div class="about-content">
-            <h2>À propos</h2>
-            <p>Bienvenue ! Je suis passionné par la création de sites web modernes et performants. 
-            Avec des compétences en HTML, CSS et JavaScript, je crée des expériences utilisateur exceptionnelles.</p>
-            <p>Mon approche combine design attrayant et fonctionnalité robuste pour garantir votre succès.</p>
+    <!-- Testimonials Section -->
+    <section id="testimonies" class="testimonies-section">
+        <h2>What Our Users Say</h2>
+        <div class="testimonies-grid">
+            <div class="testimony-card">
+                <div class="testimony-profile">
+                    <img src="https://i.pravatar.cc/150?img=1" alt="Marie Dupont" class="profile-pic">
+                    <h3>Marie Dupont</h3>
+                    <p class="profile-role">Dentist, Paris</p>
+                </div>
+                <p class="testimony-text">"ByteBrush has revolutionized my practice. My patients receive timely, accurate alerts. It's like having an AI assistant for every patient."</p>
+            </div>
+            <div class="testimony-card">
+                <div class="testimony-profile">
+                    <img src="https://i.pravatar.cc/150?img=2" alt="Jean Martin" class="profile-pic">
+                    <h3>Jean Martin</h3>
+                    <p class="profile-role">User, Lyon</p>
+                </div>
+                <p class="testimony-text">"I never thought a toothbrush could be this smart. The data Oralytics provides helps me improve my dental health every day."</p>
+            </div>
+            <div class="testimony-card">
+                <div class="testimony-profile">
+                    <img src="https://i.pravatar.cc/150?img=3" alt="Sophie Laurent" class="profile-pic">
+                    <h3>Sophie Laurent</h3>
+                    <p class="profile-role">IT Manager, Marseille</p>
+                </div>
+                <p class="testimony-text">"Data security is impeccable. Oralytics understands that trust is fundamental. I recommend it to all my colleagues."</p>
+            </div>
+            <div class="testimony-card">
+                <div class="testimony-profile">
+                    <img src="https://i.pravatar.cc/150?img=4" alt="Thomas Benoit" class="profile-pic">
+                    <h3>Thomas Benoit</h3>
+                    <p class="profile-role">Fitness Coach, Toulouse</p>
+                </div>
+                <p class="testimony-text">"ByteBrush fits perfectly into my overall health tracking. The insights are actionable and motivating. A real game-changer."</p>
+            </div>
+            <div class="testimony-card">
+                <div class="testimony-profile">
+                    <img src="https://i.pravatar.cc/150?img=5" alt="Aline Caron" class="profile-pic">
+                    <h3>Aline Caron</h3>
+                    <p class="profile-role">Nurse, Nantes</p>
+                </div>
+                <p class="testimony-text">"The daily reports allow me to monitor my patients' progress with incredible clarity. The interface is simple yet powerful."</p>
+            </div>
+            <div class="testimony-card">
+                <div class="testimony-profile">
+                    <img src="https://i.pravatar.cc/150?img=6" alt="Marc Renault" class="profile-pic">
+                    <h3>Marc Renault</h3>
+                    <p class="profile-role">Entrepreneur, Nantes</p>
+                </div>
+                <p class="testimony-text">"Oralytics transformed our user understanding. The insights are actionable and helped us iterate quickly."</p>
+            </div>
         </div>
     </section>
 
-    <!-- Section Contact -->
-    <section id="contact" class="contact">
-        <h2>Nous Contacter</h2>
-        <form class="contact-form" id="contact-form">
-            <div class="form-group">
-                <input type="text" id="name" name="name" placeholder="Votre nom" required>
-            </div>
-            <div class="form-group">
-                <input type="email" id="email" name="email" placeholder="Votre email" required>
-            </div>
-            <div class="form-group">
-                <textarea id="message" name="message" placeholder="Votre message" rows="5" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Envoyer</button>
-        </form>
-        <div id="form-status"></div>
+    <section id ="convinced_yet" class ="convinced-section">
+        <h2>Ready to Revolutionize Your Dental Health?</h2>
+        <p class="section-subtitle">Join thousands of users who trust Oralytics for smarter brushing and better health.</p>
+        <div class="btn-container">
+            <button class="btn btn-primary" id="cta-button-2">Trust us <span class="arrow">→</span></button>
+            <a href="solutions.html" class="btn btn-secondary">Our Solutions <span class="arrow">→</span></a>
+        </div>
     </section>
 
-    <!-- Pied de page -->
+    <!-- Footer -->
     <footer class="footer">
-        <p>&copy; 2025 MonSite. Tous droits réservés.</p>
+        <p>&copy; 2025 Oralytics. Invisible Intelligence. All rights reserved.</p>
     </footer>
+
+    <!-- Scam Modal -->
+    <div id="scam-modal" class="scam-modal">
+        <div class="scam-content">
+            <h1>YOU'VE BEEN SCAMMED</h1>    
+            <p>Congratulations! You've just fallen victim to the most sophisticated dental scam of the century. Your toothbrush is now smarter than you, and it's plotting to take over your life, one brushstroke at a time.</p>
+            <p> But please, start paying attention to such companies in the future. Innovation doesn't always mean progress.</p>
+            <button class="close-scam" onclick="closeScamModal()">&times;</button>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>

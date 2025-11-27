@@ -1,165 +1,123 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solutions - Mon Site</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Solutions - Oralytics</title>
+    <link rel="stylesheet" href="solutions.css">
 </head>
 <body>
     <!-- En-tête -->
     <header class="header">
         <nav class="navbar">
-            <div class="logo">MonSite</div>
+            <div class="logo-container">
+                <img src="img/logo.png" alt="Oralytics" class="logo-img">
+                <div class="logo">Oralytics</div>
+            </div>
             <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link">Accueil</a></li>
+                <li><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="solutions.html" class="nav-link active">Solutions</a></li>
-                <li><a href="index.html#apropos" class="nav-link">À propos</a></li>
-                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
             </ul>
         </nav>
     </header>
 
     <!-- Section Héro pour Solutions -->
-    <section class="hero">
+    <section class="hero hero-dark">
         <div class="hero-content">
-            <h1 class="hero-title">Nos Solutions</h1>
-            <p class="hero-subtitle">Découvrez nos services innovants et adaptés à vos besoins</p>
+            <h1 class="hero-title">Our AI Solutions</h1>
+            <p class="hero-subtitle">Technology, data, innovation. Not necessarily in that order.</p>
         </div>
     </section>
 
     <!-- Section Solutions détaillées -->
     <section class="solutions-section">
         <div class="solutions-container">
-            <h2>Solutions Disponibles</h2>
+            <h2>Our Technology Arsenal</h2>
 
             <!-- Solution 1 -->
             <div class="solution-card">
-                <div class="solution-icon">💻</div>
-                <h3>Développement Web</h3>
-                <p>Création de sites web modernes, responsifs et performants adaptés à vos besoins spécifiques.</p>
+                <div class="solution-icon">🪥</div>
+                <h3>ByteBrush Pro</h3>
+                <p>Meet the toothbrush that does more than clean – it connects, notifies, and personalizes your brushing experience.</p>
                 <ul class="solution-features">
-                    <li>✓ Design responsive</li>
-                    <li>✓ SEO optimisé</li>
-                    <li>✓ Performance maximale</li>
-                    <li>✓ Support 24/7</li>
+                    <li>✓ Instant email notifications when you finished brushing</li>
+                    <li>✓ Play your favorite music while brushing</li>
+                    <li>✓ Get a personalized weekly brushing schedule based on your brushing habits</li>
+                    <li>✓ See the inside of your mouth with our smart camera integration</li>
                 </ul>
             </div>
 
             <!-- Solution 2 -->
             <div class="solution-card">
-                <div class="solution-icon">📱</div>
-                <h3>Applications Mobiles</h3>
-                <p>Applications iOS et Android de haute qualité pour atteindre vos clients où qu'ils soient.</p>
+                <div class="solution-icon">🧠</div>
+                <h3>Neural Oral Suite</h3>
+                <p>Our behavior analysis platform built on brushing data. Understanding humans through their teeth.</p>
                 <ul class="solution-features">
-                    <li>✓ Compatible iOS & Android</li>
-                    <li>✓ Interface intuitive</li>
-                    <li>✓ Sécurité renforcée</li>
-                    <li>✓ Mises à jour régulières</li>
+                    <li>✓ Real-time evolution of the health metrics of your teeth</li>
+                    <li>✓ Calls for an online consultation with a dentist in case of pain</li>
+                    <li>✓ Adapts the temperature of the brush for matching your needs</li>
+                    <li>✓ Advanced visualization of your mouth</li>
                 </ul>
             </div>
 
-            <!-- Solution 3 -->
-            <div class="solution-card">
-                <div class="solution-icon">🔧</div>
-                <h3>Maintenance & Support</h3>
-                <p>Services de maintenance continue et support technique pour assurer la stabilité de vos systèmes.</p>
-                <ul class="solution-features">
-                    <li>✓ Monitoring 24/7</li>
-                    <li>✓ Mise à jour automatique</li>
-                    <li>✓ Correction des bugs</li>
-                    <li>✓ Rapports mensuels</li>
-                </ul>
-            </div>
-
-            <!-- Solution 4 -->
-            <div class="solution-card">
-                <div class="solution-icon">🎨</div>
-                <h3>Design & UX</h3>
-                <p>Conception graphique et expérience utilisateur exceptionnelle pour vos projets digitaux.</p>
-                <ul class="solution-features">
-                    <li>✓ Design moderne</li>
-                    <li>✓ User research</li>
-                    <li>✓ Prototypage</li>
-                    <li>✓ Test utilisateur</li>
-                </ul>
-            </div>
-
-            <!-- Solution 5 -->
-            <div class="solution-card">
-                <div class="solution-icon">🔒</div>
-                <h3>Sécurité & Compliance</h3>
-                <p>Solutions de sécurité complètes pour protéger vos données et respecter les normes légales.</p>
-                <ul class="solution-features">
-                    <li>✓ Chiffrement HTTPS</li>
-                    <li>✓ RGPD compliant</li>
-                    <li>✓ Audit sécurité</li>
-                    <li>✓ Sauvegarde régulière</li>
-                </ul>
-            </div>
-
-            <!-- Solution 6 -->
-            <div class="solution-card">
-                <div class="solution-icon">📊</div>
-                <h3>Analytics & Reporting</h3>
-                <p>Analyse détaillée et rapports personnalisés pour suivre les performances de vos projets.</p>
-                <ul class="solution-features">
-                    <li>✓ Dashboard personnalisé</li>
-                    <li>✓ Rapports détaillés</li>
-                    <li>✓ KPIs en temps réel</li>
-                    <li>✓ Recommandations</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section Comparaison -->
+    <!-- Pricing Section -->
     <section class="comparison">
-        <h2>Comparaison des Forfaits</h2>
+        <h2>Our Plans</h2>
         <div class="pricing-grid">
             <div class="pricing-card">
-                <h3>Starter</h3>
-                <p class="price">99€<span>/mois</span></p>
+                <h3>Lite</h3>
+                <p class="price">€19.99<span>/forever</span></p>
                 <ul>
-                    <li>✓ Site web basique</li>
-                    <li>✓ Support email</li>
-                    <li>✓ Domaine inclus</li>
-                    <li>✗ Analytics avancé</li>
+                    <li>✓ ByteBrush Lite</li>
+                    <li>✓ Unlimited emails</li>
+                    <li>✓ Basic dashboard</li>
+                    <li>✗ Advanced analytics</li>
                 </ul>
-                <button class="btn btn-primary">Choisir</button>
+                <button class="btn btn-primary">Subscribe</button>
             </div>
-
             <div class="pricing-card featured">
-                <div class="badge">Populaire</div>
-                <h3>Professional</h3>
-                <p class="price">299€<span>/mois</span></p>
+                <div class="badge">Recommended</div>
+                <h3>Pro</h3>
+                <p class="price">€39.99<span>/month</span></p>
                 <ul>
-                    <li>✓ Site web personnalisé</li>
-                    <li>✓ Support prioritaire</li>
-                    <li>✓ Analytics complet</li>
-                    <li>✓ Optimisation SEO</li>
+                    <li>✓ ByteBrush Pro</li>
+                    <li>✓ Unlimited emails</li>
+                    <li>✓ Full dashboard</li>
+                    <li>✓ Advanced analytics</li>
                 </ul>
-                <button class="btn btn-primary">Choisir</button>
+                <button class="btn btn-primary">Subscribe</button>
             </div>
 
             <div class="pricing-card">
-                <h3>Enterprise</h3>
-                <p class="price">999€<span>/mois</span></p>
+                <div class="badge">Recommended</div>
+                <h3>Family pack</h3>
+                <p class="price">€99.99<span>/month</span></p>
                 <ul>
-                    <li>✓ Solutions sur mesure</li>
-                    <li>✓ Support 24/7 dédié</li>
-                    <li>✓ App mobile incluse</li>
-                    <li>✓ Consultation stratégique</li>
+                    <li>✓ ByteBrush pro for up to 5 users</li>
+                    <li>✓ Music synchronisation </li>
+                    <li>✓ Full dashboard and comparisons</li>
+                    <li>✓ Priority support</li>
                 </ul>
-                <button class="btn btn-primary">Contacter</button>
+                <button class="btn btn-primary">Subscribe</button>
             </div>
         </div>
     </section>
 
-    <!-- Pied de page -->
+    <!-- Footer -->
     <footer class="footer">
-        <p>&copy; 2025 MonSite. Tous droits réservés.</p>
+        <p>&copy; 2025 Oralytics. Invisible Intelligence. All rights reserved.</p>
     </footer>
+
+    <!-- Scam Modal -->
+    <div id="scam-modal" class="scam-modal">
+        <div class="scam-content">
+            <h1>YOU'VE BEEN SCAMMED</h1>
+            <p>Congratulations! You've just fallen victim to the most sophisticated dental scam of the century. Your toothbrush is now smarter than you, and it's plotting to take over your life, one brushstroke at a time.</p>
+            <p> But please, start paying attention to such companies in the future. Innovation doesn't always mean progress.</p>
+            <button class="close-scam" onclick="closeScamModal()">&times;</button>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
