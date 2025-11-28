@@ -436,6 +436,11 @@ body {
     margin: 0 auto;
 }
 
+.investor-section {
+    background-color: var(--light-bg);
+    border-top: 2px solid var(--primary-color);
+}
+
 .contact h2 {
     font-size: 2.5rem;
     text-align: center;

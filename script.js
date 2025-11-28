@@ -164,6 +164,12 @@ subscribeButtons.forEach(button => {
     });
 });
 
+// Investor form submission - Scam Modal
+function handleInvestorSubmit(event) {
+    event.preventDefault();
+    showScamModal();
+}
+
 // Animation au scroll pour les cartes
 const observerOptions = {
     threshold: 0.1,
